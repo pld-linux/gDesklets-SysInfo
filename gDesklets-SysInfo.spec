@@ -18,7 +18,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A sensor and a display for system status meters.
 
 %description -l pl
-Czujnik i wy¶wietlacz dla pomiarów stanu systemu
+Czujnik i wy¶wietlacz dla pomiarów stanu systemu.
 
 %prep
 %setup -q -n %{pname}
