@@ -1,4 +1,4 @@
-%define	pname	SysInfo
+%define		pname	SysInfo
 Summary:	A sensor and a display for system status meters
 Summary(pl):	Czujnik i wy¶wietlacz dla pomiarów stanu systemu
 Name:		gDesklets-%{pname}
@@ -17,8 +17,8 @@ Provides:	gDesklets-display
 Provides:	gDesklets-sensor
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define	_sensorsdir	%{_datadir}/gdesklets/Sensors
-%define	_displaysdir	%{_datadir}/gdesklets/Displays
+%define		_sensorsdir	%{_datadir}/gdesklets/Sensors
+%define		_displaysdir	%{_datadir}/gdesklets/Displays
 
 %description
 A sensor and a display for system status meters.
