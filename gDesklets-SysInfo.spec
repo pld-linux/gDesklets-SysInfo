@@ -9,9 +9,10 @@ Group:		X11/Applications
 Source0:	http://gdesklets.gnomedesktop.org/files/%{pname}-%{version}.tar.gz
 # Source0-md5:	0f1d314bf082975a82baa09445c6d4c6
 URL:		http://gdesklets.gnomedesktop.org/categories.php?func=gd_show_app&gd_app_id=56
-BuildRequires:	python >= 2.3
+BuildRequires:	python >= 1:2.3
 BuildRequires:	python-pygtk-gtk >= 2.0.0
 Requires:	gDesklets
+%pyrequires_eq	python-libs
 Requires:	python-gnome-vfs
 Provides:	gDesklets-display
 Provides:	gDesklets-sensor
