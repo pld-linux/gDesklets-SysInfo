@@ -26,7 +26,7 @@ A sensor and a display for system status meters.
 Czujnik i wy¶wietlacz dla pomiarów stanu systemu.
 
 %prep
-%setup -q -c -n %{pname}
+%setup -q -c
 
 %install
 rm -rf $RPM_BUILD_ROOT
