@@ -3,7 +3,7 @@ Summary:	A sensor and a display for system status meters
 Summary(pl):	Czujnik i wy¶wietlacz dla pomiarów stanu systemu
 Name:		gDesklets-%{pname}
 Version:	0.25
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://gdesklets.gnomedesktop.org/files/%{pname}-%{version}.tar.bz2
@@ -12,6 +12,7 @@ URL:		http://gdesklets.gnomedesktop.org/categories.php?func=gd_show_app&gd_app_i
 BuildRequires:	python >= 2.3
 BuildRequires:	python-pygtk >= 2.0.0
 Requires:	gDesklets
+Requires:	python-gnome-vfs
 Provides:	gDesklets-display
 Provides:	gDesklets-sensor
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
