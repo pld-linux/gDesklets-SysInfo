@@ -10,6 +10,7 @@ Source0:	http://www.pycage.de/download/gdesklets/sysinfo-desklet-%{version}.tar.
 # Source0-md5:	ef1b78d4699c31a719a301db131580d8
 URL:		http://www.pycage.de/software_gdesklets.html
 Buildrequires:	python >= 2.3
+Buildrequires:	python-pygtk-devel >= 1.99.14
 Requires:	gDesklets
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
