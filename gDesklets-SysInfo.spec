@@ -2,12 +2,12 @@
 Summary:	A sensor and a display for system status meters
 Summary(pl):	Czujnik i wy¶wietlacz dla pomiarów stanu systemu
 Name:		gDesklets-%{pname}
-Version:	0.25
-Release:	3
+Version:	0.26
+Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://gdesklets.gnomedesktop.org/files/%{pname}-%{version}.tar.bz2
-# Source0-md5:	6d6c6c21b0f73227c33649d07a88b4c6
+Source0:	http://gdesklets.gnomedesktop.org/files/%{pname}-%{version}.tar.gz
+# Source0-md5:	0f1d314bf082975a82baa09445c6d4c6
 URL:		http://gdesklets.gnomedesktop.org/categories.php?func=gd_show_app&gd_app_id=56
 BuildRequires:	python >= 2.3
 BuildRequires:	python-pygtk-gtk >= 2.0.0
@@ -27,7 +27,7 @@ A sensor and a display for system status meters.
 Czujnik i wy¶wietlacz dla pomiarów stanu systemu.
 
 %prep
-%setup -q -c
+%setup -q -n %{pname}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -36,8 +36,7 @@ install -d $RPM_BUILD_ROOT{%{_sensorsdir},%{_displaysdir}/%{pname}}
 ./Install_SysInfo_Sensor.bin --nomsg \
 	$RPM_BUILD_ROOT%{_sensorsdir}
 
-rm -rf %{pname}/gfx/CVS
-cp -R %{pname}/{gfx,*.display} $RPM_BUILD_ROOT%{_displaysdir}/%{pname}
+cp -R {gfx,*.display} $RPM_BUILD_ROOT%{_displaysdir}/%{pname}
 
 %py_comp $RPM_BUILD_ROOT%{_sensorsdir}
 %py_ocomp $RPM_BUILD_ROOT%{_sensorsdir}
@@ -49,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{pname}/ChangeLog
+%doc %{_sensorsdir}/%{pname}/ChangeLog
 %{_displaysdir}/*
 %dir %{_sensorsdir}/%{pname}
 %{_sensorsdir}/%{pname}/*.py[co]
@@ -65,3 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sr) %{_sensorsdir}/%{pname}/locale/sr
 %lang(sr@Latn) %{_sensorsdir}/%{pname}/locale/sr@Latn
 %lang(sv) %{_sensorsdir}/%{pname}/locale/sv
+%lang(en_GB) %{_sensorsdir}/%{pname}/locale/en_GB
+%lang(hr) %{_sensorsdir}/%{pname}/locale/hr
