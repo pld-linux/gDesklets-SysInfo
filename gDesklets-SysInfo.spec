@@ -1,14 +1,13 @@
 %define	pname	SysInfo
-%define	pver	0_1
 Summary:	A sensor and a display for system status meters
 Summary(pl):	Czujnik i wy¶wietlacz dla pomiarów stanu systemu
 Name:		gDesklets-%{pname}
-Version:	0.1
+Version:	0.11
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://www.pycage.de/download/gdesklets/%{pname}-%{pver}.tar.bz2
-# Source0-md5:	c2aa7c36b9bd78701ce0c20b3dd6abff
+Source0:	http://www.pycage.de/download/gdesklets/sysinfo-desklet-%{version}.tar.bz2
+# Source0-md5:	ef1b78d4699c31a719a301db131580d8
 URL:		http://www.pycage.de/software_gdesklets.html
 Buildrequires:	python >= 2.3
 Requires:	gDesklets
@@ -21,15 +20,18 @@ A sensor and a display for system status meters.
 Czujnik i wy¶wietlacz dla pomiarów stanu systemu.
 
 %prep
-%setup -q -n %{pname}
-tail -c 20480 Install_SysInfo_Sensor.bin 2>&1 | tar -xz 2>&1
+%setup -q -n sysinfo-desklet-%{version}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_datadir}/gdesklets/{Sensors,Displays/%{pname}}
 
-cp -R SysInfo $RPM_BUILD_ROOT%{_datadir}/gdesklets/Sensors
+./Install_SysInfo_Sensor.bin --nomsg \
+	$RPM_BUILD_ROOT%{_datadir}/gdesklets/Sensors
+
 cp -R gfx *.display $RPM_BUILD_ROOT%{_datadir}/gdesklets/Displays/%{pname}
+
+rm -rf $RPM_BUILD_ROOT%{_datadir}/gdesklets/Sensors/%{pname}/{CVS,gfx/CVS,.#*}
 
 %py_comp $RPM_BUILD_ROOT%{_datadir}/gdesklets/Sensors
 %py_ocomp $RPM_BUILD_ROOT%{_datadir}/gdesklets/Sensors
