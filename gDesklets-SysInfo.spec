@@ -1,6 +1,6 @@
 %define		pname	SysInfo
 Summary:	A sensor and a display for system status meters
-Summary(pl):	Czujnik i wy¶wietlacz dla pomiarów stanu systemu
+Summary(pl.UTF-8):   Czujnik i wyÅ›wietlacz dla pomiarÃ³w stanu systemu
 Name:		gDesklets-%{pname}
 Version:	0.26
 Release:	1
@@ -24,8 +24,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A sensor and a display for system status meters.
 
-%description -l pl
-Czujnik i wy¶wietlacz dla pomiarów stanu systemu.
+%description -l pl.UTF-8
+Czujnik i wyÅ›wietlacz dla pomiarÃ³w stanu systemu.
 
 %prep
 %setup -q -n %{pname}
